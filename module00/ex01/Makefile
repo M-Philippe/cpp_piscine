@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 02:26:02 by pminne            #+#    #+#              #
-#    Updated: 2020/10/04 22:53:11 by user42           ###   ########lyon.fr    #
+#    Updated: 2020/10/04 22:55:43 by user42           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,20 @@ CPP	=	clang++
 
 CPPFLAGS	=	-Wall -Wextra -Werror
 
-SRC	=	megaphone.cpp
+SRC	=	main.cpp\
+		phonebook.cpp\
 
 OBJ	=	$(SRC:.cpp=.o)
 
-EXEC	=	megaphone
+EXEC	=	phonebook
 
 all:	$(EXEC)
 
 $(EXEC):	$(OBJ)
 	$(CPP) -o $@ $^
 
-%.o:	%.cpp
-	$(CPP) -o $@ -c $< $(CPPFLAGS)
+%.o:	%.cpp phonebook.hpp
+	$(CPP) -o $@ -c $< -I $(CPPFLAGS)
 
 fclean	:	clean
 	rm -rf $(EXEC)

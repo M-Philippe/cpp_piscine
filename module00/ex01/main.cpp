@@ -1,4 +1,16 @@
-#include "phone_book.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/03 21:25:08 by user42            #+#    #+#             */
+/*   Updated: 2020/10/03 22:19:39 by user42           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "phonebook.hpp"
 #include <iomanip>
 
 void		print_htl_line(void)
@@ -42,7 +54,7 @@ void		print_entry(const std::string print)
 	}
 }
 
-void		search(phone_book *ph_book)
+void		search(phonebook *ph_book)
 {
 	int		choice;
 	int		i;
@@ -57,15 +69,12 @@ void		search(phone_book *ph_book)
 			std::cout << i + 1;
 			std::cout << "|";
 			std::cout << std::setw(10);
-			//std::cout << ph_book[i].return_entry(FIRST_NAME);
 			print_entry(ph_book[i].return_entry(FIRST_NAME));
 			std::cout << "|";
 			std::cout << std::setw(10);
-			//std::cout << ph_book[i].return_entry(LAST_NAME);
 			print_entry(ph_book[i].return_entry(LAST_NAME));
 			std::cout << "|";
 			std::cout << std::setw(10);
-			//std::cout << ph_book[i].return_entry(LOGIN);
 			print_entry(ph_book[i].return_entry(LOGIN));
 			std::cout << "|";
 			std::cout << std::endl;
@@ -88,24 +97,10 @@ void		search(phone_book *ph_book)
 int			main(void)
 {
     std::string     command;
-	phone_book		ph_book[NB_ENTRY];
+	phonebook		ph_book[NB_ENTRY];
 	int				i;
 
 	i = 0;
-	/*std::string output;
-	output = "HAaaaqsqsdsfqsdf";
-	if (output.length() > 10)
-	{
-		output = output.substr(0, 10);
-		output[9] = '.';
-	}
-	std::cout << "|";
-	std::cout << std::setw(10);
-	int a = 1;
-	std::cout << a;
-	std::cout << "|"  << std::endl;
-	return 0;*/
-	std::cout << true << std::endl;
 	while (command != "EXIT")
 	{
 		std::cout << "Enter a command [ADD | SEARCH | EXIT]" << std::endl;
