@@ -6,13 +6,13 @@
 #    By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 02:26:02 by pminne            #+#    #+#              #
-#    Updated: 2020/10/04 22:53:11 by user42           ###   ########lyon.fr    #
+#    Updated: 2020/10/06 13:08:57 by user42           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CPP	=	clang++
 
-CPPFLAGS	=	-Wall -Wextra -Werror
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC	=	megaphone.cpp
 
