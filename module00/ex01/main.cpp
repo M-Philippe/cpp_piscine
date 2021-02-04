@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 21:25:08 by user42            #+#    #+#             */
-/*   Updated: 2020/10/03 22:19:39 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 15:57:52 by pminne           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include <iomanip>
+#include <limits>
 
 void		print_htl_line(void)
 {
@@ -34,7 +35,7 @@ void		print_header()
 	std::cout << "Last Name";
 	std::cout << "|";
 	std::cout << std::setw(10);
-	std::cout << "Login";
+	std::cout << "Nickname";
 	std::cout << "|";
 	std::cout << std::endl;
 	print_htl_line();
@@ -62,42 +63,46 @@ void		search(phonebook *ph_book)
 	choice = 0;
 	i = 0;
 	print_header();
-	while (i < NB_ENTRY && ph_book[i].is_filled())
+	while (i < NB_CONTACTS && ph_book[i].is_filled())
 	{
 			std::cout << "|";
 			std::cout << std::setw(10);
-			std::cout << i + 1;
+			std::cout << i;
 			std::cout << "|";
 			std::cout << std::setw(10);
-			print_entry(ph_book[i].return_entry(FIRST_NAME));
+			print_entry(ph_book[i].get_entry(FIRST_NAME));
 			std::cout << "|";
 			std::cout << std::setw(10);
-			print_entry(ph_book[i].return_entry(LAST_NAME));
+			print_entry(ph_book[i].get_entry(LAST_NAME));
 			std::cout << "|";
 			std::cout << std::setw(10);
-			print_entry(ph_book[i].return_entry(LOGIN));
+			print_entry(ph_book[i].get_entry(NICKNAME));
 			std::cout << "|";
 			std::cout << std::endl;
 			print_htl_line();
 		i++;
 	}
 	std::cout << "Which profile do you want to see ? ";
-	std::cin >> choice;
-	choice--;
-	i--;
-	std::cout << choice;
-	std::cout << "  i ";
-	std::cout << i << std::endl;
-	if (choice >= 0 && choice <= i)
+	while (!(std::cin >> choice))
+	{
+		if (std::cin.fail())
+		{
+			std::cout << "Saisie incorrecte" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return ;
+		}
+	}
+	if (ph_book[choice].is_filled())
 		ph_book[choice].display_contact();
 	else
-		std::cout << "Wrong Index" << std::endl;
+		std::cout << "Wrong index" << std::endl;
 }
 
 int			main(void)
 {
     std::string     command;
-	phonebook		ph_book[NB_ENTRY];
+	phonebook		ph_book[NB_CONTACTS];
 	int				i;
 
 	i = 0;
@@ -109,7 +114,7 @@ int			main(void)
 			ph_book[i].new_contact(&i);
 		else if (command == "SEARCH")
 				search(ph_book);
-		(i == 7) ? (i = 0) : 0;
+		(i == NB_CONTACTS) ? (i = 0) : 0;
 	}
 	return (0);
 }

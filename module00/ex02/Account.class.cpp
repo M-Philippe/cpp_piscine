@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 23:15:19 by user42            #+#    #+#             */
-/*   Updated: 2020/10/07 15:19:43 by user42           ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 16:13:28 by pminne           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ Account::~Account(void)
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "deposits:" <<this->_nbDeposits << ";";
-	std::cout << "withdrawals:" << this->_nbWithdrawals;
-	std::cout << ";closed" << std::endl;
+	std::cout << "closed" << std::endl;
 }
 
 int	Account::getNbAccounts(void)

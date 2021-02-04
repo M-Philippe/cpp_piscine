@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 23:44:54 by user42            #+#    #+#             */
-/*   Updated: 2021/01/25 08:34:02 by pminne           ###   ########lyon.fr   */
+/*   Created: 2020/10/14 23:26:27 by user42            #+#    #+#             */
+/*   Updated: 2021/01/25 09:11:22 by pminne           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
+#include "Zombie.hpp"
+#include <cstdlib>
 
-void	memoryLeak()
+class ZombieHorde
 {
-	std::string* panthere = new std::string("String panthere");
-	
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
-
-int		main()
-{
-	memoryLeak();
-}
+private:
+	Zombie			*_horde;
+	int				_n;
+	std::string		randomName();
+public:
+	ZombieHorde(int n);
+	~ZombieHorde();
+	void announce();
+};

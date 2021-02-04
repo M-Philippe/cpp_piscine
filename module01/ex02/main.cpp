@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 21:58:34 by user42            #+#    #+#             */
-/*   Updated: 2020/10/14 12:30:14 by user42           ###   ########lyon.fr   */
+/*   Created: 2020/10/14 12:51:08 by user42            #+#    #+#             */
+/*   Updated: 2020/10/14 23:18:15 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
+#include <cstdlib>
 
-class Pony
+int		main()
 {
-	private:
-		std::string		name;
-		int				age;
-	public:
-		Pony(std::string name, int age);
-		~Pony();
-		void	speak();
-		void	run();
-};
+	Zombie zmb("Georges", "Basic");
+	ZombieEvent evt;
+
+	srand(time(NULL));
+	zmb.advert();
+	evt.setZombieType("EVENT");
+	Zombie *ret = evt.newZombie("Jean");
+	ret->advert();
+	delete ret;
+	evt.randomChump();
+}

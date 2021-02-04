@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 02:26:02 by pminne            #+#    #+#              #
-#    Updated: 2020/10/06 13:08:37 by user42           ###   ########lyon.fr    #
+#    Updated: 2020/11/26 15:57:58 by pminne           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CPP	=	clang++
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+
+HEADER	=	phonebook.hpp\
 
 SRC	=	main.cpp\
 		phonebook.cpp\
@@ -26,7 +28,7 @@ all:	$(EXEC)
 $(EXEC):	$(OBJ)
 	$(CPP) -o $@ $^
 
-%.o:	%.cpp phonebook.hpp
+%.o:	%.cpp $(HEADER)
 	$(CPP) -o $@ -c $< -I $(CPPFLAGS)
 
 fclean	:	clean

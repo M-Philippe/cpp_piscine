@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 23:44:54 by user42            #+#    #+#             */
-/*   Updated: 2021/01/25 08:34:02 by pminne           ###   ########lyon.fr   */
+/*   Created: 2020/10/14 12:26:34 by user42            #+#    #+#             */
+/*   Updated: 2021/01/25 10:31:59 by pminne           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-void	memoryLeak()
+Zombie::Zombie(std::string name, std::string type):
+_name(name),_type(type)
 {
-	std::string* panthere = new std::string("String panthere");
-	
-	std::cout << *panthere << std::endl;
-	delete panthere;
 }
 
-int		main()
+Zombie::Zombie()
+{}
+
+Zombie::~Zombie()
+{}
+
+void	Zombie::advert()
 {
-	memoryLeak();
+	std::cout << this->_name + " " + this->_type << " Braiiiiiiinnnnnsssssss...\n";
 }

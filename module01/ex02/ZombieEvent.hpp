@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 23:44:54 by user42            #+#    #+#             */
-/*   Updated: 2021/01/25 08:34:02 by pminne           ###   ########lyon.fr   */
+/*   Created: 2020/10/14 12:55:22 by user42            #+#    #+#             */
+/*   Updated: 2020/10/14 23:15:31 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
+#include "Zombie.hpp"
 
-void	memoryLeak()
+class ZombieEvent
 {
-	std::string* panthere = new std::string("String panthere");
-	
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
-
-int		main()
-{
-	memoryLeak();
-}
+	private:
+		std::string	_type;
+	public:
+		ZombieEvent();
+		~ZombieEvent();
+		void	setZombieType(std::string type);
+		Zombie	*newZombie(std::string name);
+		void	randomChump();
+};
