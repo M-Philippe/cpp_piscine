@@ -89,7 +89,7 @@ void	FragTrap::takeDamage(u_int amount)
 
 void	FragTrap::vaulthunter_dot_exe(std::string const& target)
 {
-	std::string		attackName[5] = {"first", "second", "third", "four", "five"};
+	std::string		attackName[] = {"first", "second", "third", "four", "five"};
 
 	if (_engyPts < 25)
 	{
