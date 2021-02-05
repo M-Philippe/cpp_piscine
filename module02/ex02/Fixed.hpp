@@ -18,16 +18,18 @@ public:
 	Fixed	operator-(const Fixed &b);
 	Fixed	operator*(const Fixed &b);
 	Fixed	operator/(const Fixed &b);
-	bool	operator==(const Fixed &b);
-	bool	operator>(const Fixed &b);
-	bool	operator>=(const Fixed &b);
-	bool	operator<(const Fixed &b);
-	bool	operator<=(const Fixed &b);
-	bool	operator!=(const Fixed &b);
+	bool	operator==(const Fixed &b) const;
+	bool	operator>(const Fixed &b) const;
+	bool	operator>=(const Fixed &b) const;
+	bool	operator<(const Fixed &b) const;
+	bool	operator<=(const Fixed &b) const;
+	bool	operator!=(const Fixed &b) const;
 	Fixed&	operator++();		// Prefix incrementation
 	Fixed	operator++(int);	// Postfix incrementation
 	Fixed&	operator--();		// Prefix decrementation
 	Fixed	operator--(int);	// Postfix decrementation
+	static const Fixed&	min(const Fixed& a, const Fixed &b);
+	static const Fixed&	max(const Fixed& a, const Fixed &b);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 	int		toInt(void) const;
@@ -35,3 +37,5 @@ public:
 };
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& fx);
+const Fixed&		min(const Fixed& a, const Fixed& b);
+const Fixed&		max(const Fixed& a, const Fixed& b);

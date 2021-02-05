@@ -16,7 +16,7 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << --a << std::endl;
 	std::cout << a << std::endl;
-	
+
 	Fixed c = 10;
 	std::cout << c.toInt() << std::endl;
 	c = c + Fixed(2);
@@ -33,5 +33,13 @@ int main(void)
 	std::cout << (a > c) << std::endl;
 	std::cout << (a >= c) << std::endl;
 	std::cout << (a != c) << std::endl;
+	a.setRawBits(1);
+	std::cout << "a: " << a << " | b = " << b << std::endl;
+	std::cout << min(a, b) << std::endl;
+	std::cout << std::min(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+	std::cout << max(a, b) << std::endl;
+	std::cout << std::max(a, b) << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 	return 0;
 }
