@@ -28,4 +28,5 @@ public:
 	void	meleeAttack(std::string const& target);
 	void	takeDamage(u_int amount);
 	void	beRepaired(u_int amount);
+	std::string	getName();
 };

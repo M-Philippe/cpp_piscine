@@ -59,7 +59,7 @@ void	ClapTrap::beRepaired(u_int amount)
 	if (amount + _hitPts > _mxHitPts)
 	{
 		_hitPts = _mxHitPts;
-		std::cout << "<ClapTrap> " << _name << " Has gained " << amount << "HP. Now he have " << _hitPts << "HP (Can't be sup to 100HP)" << std::endl;
+		std::cout << "<ClapTrap> " << _name << " Has gained " << amount << "HP. Now he have " << _hitPts << "HP (Can't be superior to " << _mxHitPts << ")" << std::endl;
 	}
 	else
 	{
@@ -86,3 +86,5 @@ void	ClapTrap::takeDamage(u_int amount)
 		std::cout << "<ClapTrap> " << _name << " suffer " << (amount - _armrDmgReduction) << " HP and have " << _hitPts << "HP now" << std::endl;
 	}
 }
+
+std::string	ClapTrap::getName() {return (_name);}
