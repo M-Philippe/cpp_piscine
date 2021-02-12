@@ -1,5 +1,9 @@
 #include "SuperTrap.hpp"
 
+/*
+**			CODE CONSTRUCTOR COPY !!!!!!
+*/
+
 SuperTrap::SuperTrap()
 {
 	std::cout << "<SuperTrap> default constructor called" << std::endl;
