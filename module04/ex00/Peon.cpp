@@ -12,6 +12,11 @@ Peon::Peon(const Peon &org){
 	*this = org; std::cout << "constructor copy called" << std::endl;
 }
 
+Peon&	Peon::operator=(const Peon& org){
+	_name = org._name;
+	return (*this);
+}
+
 Peon::~Peon(){
 	std::cout << "Bleuark..." << std::endl;
 }

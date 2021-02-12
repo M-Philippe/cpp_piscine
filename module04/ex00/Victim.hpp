@@ -2,6 +2,14 @@
 
 #include <iostream>
 
+/*
+constructeur défaut
+constructeur argument
+constructeur par copie
+destructeur
+operateur d'affectation
+*/
+
 class Victim
 {
 protected:
