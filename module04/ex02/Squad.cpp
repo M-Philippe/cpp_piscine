@@ -1,42 +1,46 @@
 #include "Squad.hpp"
 
 Squad::Squad() {
-	for (int i = 0; i < MAX_STACK; i++) {
-		_arr[i] = NULL;
-	}
-	_top = 0;
+	_nbUnits = 0;
+	_squad = NULL;
 }
 
-Squad::~Squad() {}
+Squad::~Squad() {
+	for (int i = 0; i < _nbUnits; i++) {
+		delete _squad[i];
+	}
+	delete[] _squad;
+}
 
 int		Squad::getCount() const {
-	return (_top);
+	return (_nbUnits);
 }
 
 ISpaceMarine*	Squad::getUnit(int n) const {
-	if (n < 0 || n > _top)
+	if (n < 0 || n > _nbUnits)
 		return (NULL);
-	std::cout << "Inside " << &_arr[n] << std::endl;
-	return (_arr[n]);
+	return (_squad[n]);
 }
 
 bool			Squad::isAlreadyInSquad(ISpaceMarine* src) const {
-	std::cout << "***" << std::endl;
-	std::cout << &src << std::endl;
-	for (int i = 0; i <= _top; i++) {
-		std::cout << "% " << &_arr[i] << std::endl;
+	for (int i = 0; i < _nbUnits; i++) {
+		if (_squad[i] == src)
+			return (false);
 	}
-	std::cout << "***" << std::endl;
-	return (false);
+	return (true);
 }
 
 /*	Return -1 if an error occured	*/
 int				Squad::push(ISpaceMarine* src) {
 	if (!src || !isAlreadyInSquad(src))
 		return (-1);
-	_arr[_top] = src;
-	if (&_arr[_top] == &src)
-		std::cout << "HERE" << std::endl;
-	_top++;	
-	return (getCount());
+	ISpaceMarine**	tmp = _squad;
+	_squad = new ISpaceMarine*[_nbUnits+1];
+	for (int i = 0; i < _nbUnits; i++){
+		_squad[i] = tmp[i];
+	}
+	_squad[_nbUnits] = src;
+	delete[] tmp;
+	_nbUnits++;
+	return (_nbUnits);
 }

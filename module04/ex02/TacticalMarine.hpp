@@ -1,19 +1,18 @@
 #pragma once
 
 #include "ISpaceMarine.hpp"
+#include <iostream>
 
 class TacticalMarine : public ISpaceMarine
 {
-private:
-	int _id;
-public:
-	TacticalMarine(/* args */);
-	TacticalMarine(int id);
-	virtual ~TacticalMarine();
-	ISpaceMarine*	clone() const {};
-	void			battleCry() const {};
-	void			rangedAttack() const {};
-	void			meleeAttack() const {};
-	// TMP
-	int				getId() const {return (_id);}
+	public:
+		TacticalMarine();
+		TacticalMarine(const TacticalMarine& org);
+		TacticalMarine&	operator=(const TacticalMarine* org);
+		virtual ~TacticalMarine();
+		
+		ISpaceMarine*	clone() const;
+		void			battleCry() const;
+		void			rangedAttack() const;
+		void			meleeAttack() const;
 };

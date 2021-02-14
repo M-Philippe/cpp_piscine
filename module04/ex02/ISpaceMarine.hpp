@@ -8,6 +8,4 @@ class ISpaceMarine
 		virtual void			battleCry() const = 0;
 		virtual void			rangedAttack() const = 0;
 		virtual void			meleeAttack() const = 0;
-		//		TMP
-		virtual int				getId() const = 0;
 };
