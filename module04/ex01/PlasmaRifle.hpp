@@ -16,6 +16,6 @@ public:
 	PlasmaRifle(const PlasmaRifle&	org);
 	PlasmaRifle&	operator=(const PlasmaRifle& org);
 	void	testClass();	// For Testing
-	~PlasmaRifle();
+	virtual ~PlasmaRifle();
 	void	attack() const;
 };

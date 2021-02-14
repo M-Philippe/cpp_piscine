@@ -15,5 +15,5 @@ class RadScorpion : public Enemy
 		RadScorpion();
 		RadScorpion(const RadScorpion& org);
 		RadScorpion&	operator=(const RadScorpion& org);
-		~RadScorpion();
+		virtual ~RadScorpion();
 };

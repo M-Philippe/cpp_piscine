@@ -28,7 +28,6 @@ std::string	Enemy::getType() const {
 }
 
 void		Enemy::takeDamage(int atkDmg) {
-	std::cout << "takeDamage in enemy" << std::endl;
 	if (atkDmg > getHp())
 		return ;
 	_hp -= atkDmg;

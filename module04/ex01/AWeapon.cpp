@@ -36,4 +36,3 @@ void		AWeapon::incDamage() {
 }
 
 AWeapon::~AWeapon(){}
-

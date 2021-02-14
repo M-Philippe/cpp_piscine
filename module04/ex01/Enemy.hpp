@@ -9,6 +9,10 @@
 **	Destructor
 */
 
+/*
+**		REMOVE TESTCLASS IN BOTH ABSTRACT CLASS
+*/
+
 class Enemy
 {
 	private:
@@ -19,9 +23,9 @@ class Enemy
 		Enemy(int hp, std::string const& type);
 		Enemy(const Enemy& org);
 		Enemy&	operator=(const Enemy& org);
-		~Enemy();
-		int				getHp() const;
-		std::string		getType() const;
-		virtual void	takeDamage(int atkDmg);
-		void			testClass();
+		virtual ~Enemy();
+		int					getHp() const;
+		std::string	virtual	getType() const;
+		virtual void		takeDamage(int atkDmg);
+		void				testClass();
 };
