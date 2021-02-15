@@ -2,6 +2,10 @@
 #include <iostream>
 #include <cmath>
 
+/*
+**		VERIFIER l'overload du post-fix ++ qui semble étrange
+*/
+
 class Fixed
 {
 private:
