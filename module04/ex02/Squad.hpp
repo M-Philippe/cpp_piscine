@@ -3,6 +3,8 @@
 #include <iostream>
 #include "ISquad.hpp"
 
+/*	PUT CANONIC	*/
+
 class Squad : public ISquad
 {
 	private:
