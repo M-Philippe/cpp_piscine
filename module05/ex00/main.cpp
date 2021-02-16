@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
 
+/*
+**		REDO the main with a pointer to bureaucrat
+*/
 int main() {
 	Bureaucrat bob("Bob", 1);
 	std::cout << bob;
@@ -23,16 +26,16 @@ int main() {
 	}
 	Bureaucrat jim("Jim", 120);
 	std::cout << jim;
-	jim--;
+	jim.downgrade();
 	std::cout << jim;
-	jim++;
+	jim.promote();
 	std::cout << jim;
 	for (int i = 0; i < 200; i++) {
-		jim--;
+		jim.downgrade();
 	}
 	std::cout << jim;
 	for (int i = 0; i <  200; i++) {
-		jim++;
+		jim.promote();
 	}
 	std::cout << jim;
 }

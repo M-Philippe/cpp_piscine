@@ -45,6 +45,14 @@ int				Bureaucrat::getGrade() const {
 	return (_grade);
 }
 
+void			Bureaucrat::signForm(const std::string &formName, const std::string& reason, bool success) const {
+	if (success) {
+		std::cout << _name << " signs " << formName << std::endl;
+	}
+	else
+		std::cout << _name << " can't sign " << formName << " because " << reason << std::endl;
+}
+
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat& ipt) {
 	os << ipt.getName() << ", bureaucrat grade " << ipt.getGrade() << "." << std::endl;
 	return (os);
