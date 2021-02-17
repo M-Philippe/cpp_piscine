@@ -22,10 +22,10 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 			/*				***				*/
 
-std::string	PresidentialPardonForm::getTarget() {
+std::string	PresidentialPardonForm::getTarget() const {
 	return (_target);
 }
 
-void		PresidentialPardonForm::action() {
+void		PresidentialPardonForm::action() const {
 	std::cout << getTarget() << " has been forgived by Zafod Beeblebrox" << std::endl;
 }

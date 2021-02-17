@@ -10,6 +10,7 @@ int main() {
 	Form*	f1 = new ShrubberyCreationForm("Jean");
 	Bureaucrat bob("bob", 1);
 	Bureaucrat nul("nul", 150);
+	bob.executeForm(*f1);
 	f1->beSigned(bob);
 	try {
 		f1->execute(nul);
@@ -23,5 +24,6 @@ int main() {
 	catch (std::exception& e) {
 		std::cout << "Bob ne peux pas" << std::endl;
 	}
+	nul.executeForm(*f1);
 	delete f1;
 }

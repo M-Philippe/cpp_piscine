@@ -22,11 +22,11 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 			/*				***				*/
 
-std::string	RobotomyRequestForm::getTarget() {
+std::string	RobotomyRequestForm::getTarget() const {
 	return (_target);
 }
 
-void		RobotomyRequestForm::action() {
+void		RobotomyRequestForm::action() const {
 	std::cout << "* DRILL SOUND * ";
 	std::cout << getTarget() << " has been robotomized" << std::endl;
 }

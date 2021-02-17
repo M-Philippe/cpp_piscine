@@ -22,11 +22,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 			/*				***				*/
 
-std::string		ShrubberyCreationForm::getTarget() {
+std::string		ShrubberyCreationForm::getTarget() const {
 	return (_target);
 }
 
-char*			ShrubberyCreationForm::generateFileName() {
+char*			ShrubberyCreationForm::generateFileName() const {
 	std::string		tmp;
 	char			*str;
 
@@ -36,7 +36,7 @@ char*			ShrubberyCreationForm::generateFileName() {
 	return (str);
 }
 
-void			ShrubberyCreationForm::action() {
+void			ShrubberyCreationForm::action() const {
 	char*			fileName;
 	std::ofstream	file;
 	char	treeASCII[] = "      /\\\n     /oo\\\n    /oooo\\\n   /oooooo\\\n  /oooooooo\\\n      ||\n      ||\n";

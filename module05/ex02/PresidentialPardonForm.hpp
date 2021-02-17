@@ -12,6 +12,6 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(const PresidentialPardonForm& org);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& org);
 		virtual ~PresidentialPardonForm();
-		std::string		getTarget();
-		void			action();
+		std::string		getTarget() const;
+		void			action() const;
 };
