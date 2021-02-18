@@ -12,7 +12,7 @@ int main() {
 	std::cout << max<char>(c, d) << std::endl;
 	std::cout << ::max<std::string>(s1, s2) << std::endl;
 
-	std::cout << min<int>(a, b) << std::endl;
+	std::cout << ::min<int>(a, b) << std::endl;
 	std::cout << min<char>(c, d) << std::endl;
 	std::cout << ::min<std::string>(s1, s2) << std::endl;
 
