@@ -14,12 +14,10 @@ int main() {
 		std::cout << *it << " ";
 	}
 	std::cout << "\n";
-	try {
-		easyfind<std::vector<int> >(vct, n);
+	if (easyfind<std::vector<int> >(vct, n)) {
 		std::cout << n << " is in the vector" << std::endl;
 	}
-	catch (std::exception& e) {
-		std::cout << "The number is not in the vector" << std::endl;
-	}
+	else
+		std::cout << n << " is not in the vector" << std::endl;
 	return (0);
 }
