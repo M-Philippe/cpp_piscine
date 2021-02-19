@@ -3,6 +3,10 @@
 #include <string.h>
 #include "iter.hpp"
 
+void	ftUpper(char& c) {
+	c = toupper(c);
+}
+
 int main() {
 	int len = 10;
 	int* arr = new int[len];
@@ -20,7 +24,7 @@ int main() {
 	bzero(str, len);
 	str = strcpy(str, "HaHaLol");
 	std::cout << str << std::endl;
-	iter(str, len, toupper);
+	iter(str, len, ftUpper);
 	std::cout << str << std::endl;
 	delete[] str;
 }
