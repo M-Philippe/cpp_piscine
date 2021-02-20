@@ -11,9 +11,23 @@ span::span(u_int n) {
 	_fullArray = false;
 }
 
+span::span(const span& org) {
+	*this = org;
+}
+
+span&	span::operator=(const span& org) {
+	_N = org._N;
+	_fill = org._fill;
+	_fullArray = org._fullArray;
+	_data = new int[_N];
+	std::copy(org._data, org._data + _fill, _data);
+	return (*this);
+}
+
 span::~span() { delete[] _data; }
 
 /*			***				*/
+
 
 void	span::addNumber(int input) {
 	if (_fullArray)

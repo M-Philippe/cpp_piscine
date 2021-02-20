@@ -46,5 +46,11 @@ int main() {
 	std::cout << "\n\nFinal\n";
 	std::cout << a.longestSpan() << "\n\n" << std::endl;
 	a.display();
+	std::cout << "\n\n";
+	span d(a);
+	d.display();
+	std::cout << "\n\n";
+	span x(a);
+	x.display();
 	return (0);
 }

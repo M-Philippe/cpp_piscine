@@ -27,10 +27,10 @@ class span
 
 		template <class InputIterator>
 		void	addNumberRange(InputIterator first, InputIterator end);
-		void	display();
 		int*	copyData();
 		int		shortestSpan();
 		int		longestSpan();
+		void	display();
 
 		class fullArray : public std::exception {};
 };
