@@ -26,4 +26,5 @@ int		main()
 	ret->advert();
 	delete ret;
 	evt.randomChump();
+	evt.randomChump();
 }
