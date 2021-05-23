@@ -12,7 +12,7 @@
 
 CPP	=	clang++
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 HEADER	=	phonebook.hpp\
 

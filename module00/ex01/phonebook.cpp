@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
+/*   By: philippe <philippe@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 21:25:12 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 15:59:42 by pminne           ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 23:38:59 by philippe         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ phonebook::phonebook(void)
 }
 
 phonebook::~phonebook(void)
-{
-}
+{}
 
 void	phonebook::display_contact()
 {
@@ -43,7 +42,7 @@ void	phonebook::new_contact(int *i)
 	for (int a = 0; a < NB_ENTRY; a++)
 	{
 		std::cout << name_entry[a] << " : ";
-		std::cin >> this->book_entry[a];
+		std::getline(std::cin, this->book_entry[a]);
 	}
 	*i += 1;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
+/*   By: philippe <philippe@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 21:25:21 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 15:58:51 by pminne           ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 17:00:11 by philippe         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define	PHONEBOOK_HPP
 
 #include <iostream>
+#include <string>
 
 # define NB_CONTACTS 8
 

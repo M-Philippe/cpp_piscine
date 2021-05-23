@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pminne <pminne@student-42lyon.fr>          +#+  +:+       +#+        */
+/*   By: philippe <philippe@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 21:25:08 by user42            #+#    #+#             */
-/*   Updated: 2020/11/26 15:57:52 by pminne           ###   ########lyon.fr   */
+/*   Updated: 2021/05/24 01:47:25 by philippe         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,17 @@ void		search(phonebook *ph_book)
 			print_htl_line();
 		i++;
 	}
-	std::cout << "Which profile do you want to see ? ";
-	while (!(std::cin >> choice))
+	std::cout << "Which profile do you want to see ? " << std::endl;
+	std::cin >> choice;
+	if (std::cin.fail())
 	{
-		if (std::cin.fail())
-		{
-			std::cout << "Saisie incorrecte" << std::endl;
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			return ;
-		}
+		std::cout << "Saisie incorrecte" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return ;
 	}
-	if (ph_book[choice].is_filled())
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	if (choice < 8 && ph_book[choice].is_filled())
 		ph_book[choice].display_contact();
 	else
 		std::cout << "Wrong index" << std::endl;
@@ -109,7 +108,7 @@ int			main(void)
 	while (command != "EXIT")
 	{
 		std::cout << "Enter a command [ADD | SEARCH | EXIT]" << std::endl;
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if (command == "ADD")
 			ph_book[i].new_contact(&i);
 		else if (command == "SEARCH")
