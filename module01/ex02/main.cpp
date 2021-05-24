@@ -20,10 +20,10 @@ int		main()
 	ZombieEvent evt;
 
 	srand(time(NULL));
-	zmb.advert();
+	zmb.announce();
 	evt.setZombieType("EVENT");
 	Zombie *ret = evt.newZombie("Jean");
-	ret->advert();
+	ret->announce();
 	delete ret;
 	evt.randomChump();
 	evt.randomChump();

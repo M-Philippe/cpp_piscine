@@ -21,7 +21,7 @@ Zombie::~Zombie()
 {
 }
 
-void	Zombie::advert()
+void	Zombie::announce()
 {
 	std::cout << this->_name + " " + this->_type << " Braiiiiiiinnnnnsssssss...\n";
 }

@@ -32,5 +32,5 @@ void	ZombieEvent::randomChump()
 	int r = rand() % 10;
 	r != 0 ? r-- : 0;
 	Zombie chump(lst_name[r], "Random");
-	chump.advert();
+	chump.announce();
 }
