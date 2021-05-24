@@ -14,19 +14,17 @@
 
 ZombieHorde::ZombieHorde(int n):_n(n)
 {
-	_horde = new Zombie[_n];
+	if (n < 0)
+		_n = 0;
+	_horde = new Zombie [_n];
 	for (int i = 0; i < _n; i++)
-	{
-		new(&_horde[i]) Zombie(randomName(), "random");
-	}
+		_horde[i] = Zombie(randomName(), "random");
 }
 
 void	ZombieHorde::announce()
 {
 	for (int i = 0; i < _n; i++)
-	{
-		(_horde+i)->advert();
-	}
+		_horde[i].advert();
 }
 
 std::string	ZombieHorde::randomName()

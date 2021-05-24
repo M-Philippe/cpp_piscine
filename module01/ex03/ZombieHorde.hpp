@@ -16,12 +16,13 @@
 
 class ZombieHorde
 {
-private:
-	Zombie			*_horde;
-	int				_n;
-	std::string		randomName();
-public:
-	ZombieHorde(int n);
-	~ZombieHorde();
-	void announce();
+	private:
+		Zombie			*_horde;
+		int				_n;
+		std::string		randomName();
+
+	public:
+		ZombieHorde(int n);
+		~ZombieHorde();
+		void announce();
 };

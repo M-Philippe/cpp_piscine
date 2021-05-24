@@ -18,4 +18,6 @@ int		main()
 	ZombieHorde horde(5);
 	horde.announce();
 	ZombieHorde hd(-5);
+	ZombieHorde hd1(1);
+	hd1.announce();
 }
