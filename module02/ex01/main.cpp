@@ -17,9 +17,9 @@ int main()
     std::cout << "b is " << b.toInt() << " as int" << std::endl;
     std::cout << "c is " << c.toInt() << " as int" << std::endl;
     std::cout << "d is " << d.toInt() << " as int" << std::endl;
-    std::cout << "a is " << a.toFloat() << " as float" << std::endl;
-    std::cout << "b is " << b.toFloat() << " as float" << std::endl;
-    std::cout << "c is " << c.toFloat() << " as float" << std::endl;
-    std::cout << "d is " << d.toFloat() << " as float" << std::endl;
+    std::cout << "a is " << a.toFloat() << " as int" << std::endl;
+    std::cout << "b is " << b.toFloat() << " as int" << std::endl;
+    std::cout << "c is " << c.toFloat() << " as int" << std::endl;
+    std::cout << "d is " << d.toFloat() << " as int" << std::endl;
     return 0;
 }

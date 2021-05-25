@@ -19,3 +19,5 @@ public:
 	int		toInt(void) const;
 	float	toFloat(void) const;
 };
+
+std::ostream&	operator<<(std::ostream& os, const Fixed& fx);

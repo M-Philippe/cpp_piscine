@@ -2,7 +2,7 @@
 
 Fixed::Fixed(const int input)
 {
-	value = (input * (1 << n_bits));
+	value = (input << n_bits);
 }
 
 Fixed::Fixed(const float input)
@@ -42,7 +42,7 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::toInt(void) const
 {
-	return (value / (1 << n_bits));
+	return (value >> n_bits);
 }
 
 float	Fixed::toFloat(void) const
@@ -52,6 +52,6 @@ float	Fixed::toFloat(void) const
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& fx)
 {
-	os << fx.getRawBits();
+	os << fx.toFloat();
 	return (os);
 }
