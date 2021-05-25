@@ -1,7 +1,5 @@
 #pragma once
 
-// fixed<w,b>
-
 class Fixed
 {
 private:
